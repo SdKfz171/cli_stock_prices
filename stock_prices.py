@@ -25,7 +25,7 @@ if len(stocks) > 1:
 
     print(f'종목 선택[1-{count}]: ', end='')
     index = int(input())
-    index = index - 1
+    index -= 1
 
 stock_num = stocks[index]['code']
 response = requests.get(base_url+f"code={stock_num}")
