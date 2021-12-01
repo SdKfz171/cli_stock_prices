@@ -4,7 +4,7 @@ import json
 base_url = "https://api.alphasquare.co.kr/data/v2/price/current-price?"
 search_url = "https://api.alphasquare.co.kr/api/square/autocomplete/stock"
 
-print('type stock\'s name: ', end='')
+print('종목명 입력: ', end='')
 stock_name = str(input())
 
 param = {"stock":stock_name}
@@ -23,7 +23,7 @@ if len(stocks) > 1:
         print(count+1, s['cname'])
         count += 1
 
-    print(f'choose stock name[1-{count}]: ', end='')
+    print(f'종목 선택[1-{count}]: ', end='')
     index = int(input())
     index = index - 1
 
