@@ -31,4 +31,4 @@ stock_num = stocks[index]['code']
 response = requests.get(base_url+f"code={stock_num}")
 
 price_json = json.loads(response.text)
-print(f'{stocks[index]["cname"]} 현재가: {price_json[stock_num]["close"]}')
+print(f'{stocks[index]["cname"]} 시초가: {price_json[stock_num]["open"]} 현재가: {price_json[stock_num]["close"]}')
