@@ -38,4 +38,6 @@ updown_ratio = round((close - prev_close) / prev_close * 100, 2)
 volume = price_json[stock_num]["volume"]
 volume_valued = price_json[stock_num]["volume_valued"]
 print(f'{stocks[index]["cname"]} 시초가: {open}, 현재가: {close}, 전일대비등락률: {updown_ratio}%')
-print(f'\t 거래량: {volume}, 거래대금: {volume_valued}')
+for i in range(len(stocks[index]["cname"])):
+    print('  ', end='')
+print(f' 거래량: {volume}, 거래대금: {volume_valued}')
