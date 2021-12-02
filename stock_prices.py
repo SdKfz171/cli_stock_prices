@@ -31,4 +31,11 @@ stock_num = stocks[index]['code']
 response = requests.get(base_url+f"code={stock_num}")
 
 price_json = json.loads(response.text)
-print(f'{stocks[index]["cname"]} 현재가: {price_json[stock_num]["close"]}')
+open = int(price_json[stock_num]["open"])
+close = int(price_json[stock_num]["close"])
+prev_close = int(price_json[stock_num]["prev_close"])
+updown_ratio = round((close - prev_close) / prev_close * 100, 2)
+volume = price_json[stock_num]["volume"]
+volume_valued = price_json[stock_num]["volume_valued"]
+print(f'{stocks[index]["cname"]} 시초가: {open}, 현재가: {close}, 전일대비등락률: {updown_ratio}%')
+print(f'\t 거래량: {volume}, 거래대금: {volume_valued}')
